@@ -2,4 +2,6 @@
 
 ## Install
 
-`brew install dopplerhq/homebrew-tap/doppler`
+```shell
+brew install dopplerhq/homebrew-tap/doppler
+```
