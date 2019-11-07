@@ -1,7 +1,7 @@
-# Doppler homebrew tap
+# Doppler homebrew CLI
 
 ## Install
 
 ```shell
-brew install dopplerhq/homebrew-tap/doppler
+brew install dopplerhq/cli/doppler
 ```
