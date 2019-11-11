@@ -2,24 +2,24 @@
 class Doppler < Formula
   desc "The official Doppler CLI for managing your secrets and config"
   homepage "https://doppler.com"
-  version "0.0.23"
+  version "0.0.24"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/DopplerHQ/cli/releases/download/v0.0.23/cli_0.0.23_macOS_x86_64.tar.gz"
-    sha256 "7616c5aad7a04c8073d0679ba3c32ca0faf382a00398b97e44c5fff33bd59881"
+    url "https://github.com/DopplerHQ/cli/releases/download/v0.0.24/cli_0.0.24_macOS_x86_64.tar.gz"
+    sha256 "025cf47bdcbab85d9cd483ca1890630306f2c022c951b3755be6367092b7927d"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/DopplerHQ/cli/releases/download/v0.0.23/cli_0.0.23_linux_x86_64.tar.gz"
-      sha256 "c97015438fe4d9f7190e8a07a4d18bbd44183b821e829505a008dd08db6be8b9"
+      url "https://github.com/DopplerHQ/cli/releases/download/v0.0.24/cli_0.0.24_linux_x86_64.tar.gz"
+      sha256 "72cfad526c0936b57f837a6a4736a4ce8b55bbe6569d49a9d0714ccf4aa4c35d"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/DopplerHQ/cli/releases/download/v0.0.23/cli_0.0.23_linux_arm64.tar.gz"
-        sha256 "e56d7ea3565d4c194ba4c8506ac459e6da91c6c8b87cd9a2d2787f6a5e55e10a"
+        url "https://github.com/DopplerHQ/cli/releases/download/v0.0.24/cli_0.0.24_linux_arm64.tar.gz"
+        sha256 "3effe82ddf517ab56078a2cdee7f4b64f1f7f25ee071207161bfcf8e925b71b2"
       else
-        url "https://github.com/DopplerHQ/cli/releases/download/v0.0.23/cli_0.0.23_linux_armv6.tar.gz"
-        sha256 "44de2352b0bbe6734d7728cfb6f9697d8e24126cf6dc5d752bb839074bc56d97"
+        url "https://github.com/DopplerHQ/cli/releases/download/v0.0.24/cli_0.0.24_linux_armv6.tar.gz"
+        sha256 "f4c38ae92fa0cc9aec4faaf4a97279260816f942b82de3073eb444039dc1da79"
       end
     end
   end
