@@ -1,4 +1,4 @@
-# Doppler homebrew
+# Doppler homebrew tap
 
 ## Install
 
