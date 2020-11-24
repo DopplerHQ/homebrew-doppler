@@ -2,26 +2,24 @@
 class Doppler < Formula
   desc "The official Doppler CLI for managing your secrets"
   homepage "https://doppler.com"
-  version "3.18.1"
+  version "3.19.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.18.1/doppler_3.18.1_macOS_amd64.tar.gz"
-    sha256 "484533fead20a2a1089c57795e765773229693840f2a9599903acddb5822d101"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/DopplerHQ/cli/releases/download/3.18.1/doppler_3.18.1_linux_amd64.tar.gz"
-      sha256 "d181d128043b9c6466f83da620126d38dcc802cf3c5a1890e5ba6ff5cc738b2c"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/DopplerHQ/cli/releases/download/3.18.1/doppler_3.18.1_linux_arm64.tar.gz"
-        sha256 "7875ab05774dd70fcbfaddbf3e965689f07530768a3c38d6977fa0e5c589a8c3"
-      else
-        url "https://github.com/DopplerHQ/cli/releases/download/3.18.1/doppler_3.18.1_linux_armv6.tar.gz"
-        sha256 "ea654d71c5440e3f81f1b9c514400153f095fbee99b80a0d241951cbd5f489b5"
-      end
-    end
+    url "https://github.com/DopplerHQ/cli/releases/download/3.19.0/doppler_3.19.0_macOS_amd64.tar.gz"
+    sha256 "5867a5a062b77f5d876617b1646e40d7baf307187402f4de7f083524d994dd51"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/DopplerHQ/cli/releases/download/3.19.0/doppler_3.19.0_linux_amd64.tar.gz"
+    sha256 "564e04ac90cbbaac4ea606f91a9a0d58a5a176c3ccf4ab4706cc82ceeee116f2"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/DopplerHQ/cli/releases/download/3.19.0/doppler_3.19.0_linux_armv6.tar.gz"
+    sha256 "11fca8aa082715af609729801885eb5d75f1168342204c6018c8524276f23c4c"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/DopplerHQ/cli/releases/download/3.19.0/doppler_3.19.0_linux_arm64.tar.gz"
+    sha256 "d59bd3f944f8ff58a6b54b5bf55a1d9541a92fadff2aeb248b07d8f2650f042c"
   end
 
   def install
