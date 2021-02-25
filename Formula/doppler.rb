@@ -5,24 +5,28 @@
 class Doppler < Formula
   desc "The official Doppler CLI for managing your secrets"
   homepage "https://doppler.com"
-  version "3.22.1"
+  version "3.23.0"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.22.1/doppler_3.22.1_macOS_amd64.tar.gz"
-    sha256 "2e2e814809c1e36202f2b77b789eee1a2dfeaaf4036549b58b797647461b1c82"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/DopplerHQ/cli/releases/download/3.23.0/doppler_3.23.0_macOS_amd64.tar.gz"
+    sha256 "e3704b1681f2541945e47369751c6113c542bf154f73c71743bfcc9413970a0c"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/DopplerHQ/cli/releases/download/3.23.0/doppler_3.23.0_macOS_arm64.tar.gz"
+    sha256 "3bcf370448241bab24aa23ce9a559480d46e65d9e48a10e1edcf7ca47fbc7139"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.22.1/doppler_3.22.1_linux_amd64.tar.gz"
-    sha256 "c1d02930ad2516c8807e1f44c7e3fd11e9312f98506c4033e67f009855cdd3cc"
+    url "https://github.com/DopplerHQ/cli/releases/download/3.23.0/doppler_3.23.0_linux_amd64.tar.gz"
+    sha256 "52495cf205150e77c45b01d6a86f7943c4262510ebea2b29ce8a6b84a92a9733"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.22.1/doppler_3.22.1_linux_armv6.tar.gz"
-    sha256 "4b3204b8446e7b30647e311ecbc38d23c3d0314eb823c1eed09dfbbfb0b106a8"
+    url "https://github.com/DopplerHQ/cli/releases/download/3.23.0/doppler_3.23.0_linux_armv6.tar.gz"
+    sha256 "386ffb92cc68c8ee9ba70d99d13f9a716119dcb7cd4552559ecf72340d822f8b"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.22.1/doppler_3.22.1_linux_arm64.tar.gz"
-    sha256 "964b0ecc7a8d6bf4fbd6876fffc89af6fa05a22d6ec0418b5a6a036f3bb1a357"
+    url "https://github.com/DopplerHQ/cli/releases/download/3.23.0/doppler_3.23.0_linux_arm64.tar.gz"
+    sha256 "c131bec0f8a6af02035066c9fad35d1814fb82ca8987b223f3d779450443840c"
   end
 
   def install
