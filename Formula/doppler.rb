@@ -5,28 +5,28 @@
 class Doppler < Formula
   desc "The official Doppler CLI for managing your secrets"
   homepage "https://doppler.com"
-  version "3.30.0"
+  version "3.30.1"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.30.0/doppler_3.30.0_macOS_amd64.tar.gz"
-    sha256 "c60f62fb2988af672e65fb2a042e0fb21c5f2f3fc473a054ed700363df006494"
+    url "https://github.com/DopplerHQ/cli/releases/download/3.30.1/doppler_3.30.1_macOS_amd64.tar.gz"
+    sha256 "959c0f8e6c7cddc699002d8a2f0cfdc809f0a91f68a5c295283b8ac04b2201de"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.30.0/doppler_3.30.0_macOS_arm64.tar.gz"
-    sha256 "0eafe2df5d21d38fce77e6914972eba351496af37818bed6c59a97cb9f7c92cc"
+    url "https://github.com/DopplerHQ/cli/releases/download/3.30.1/doppler_3.30.1_macOS_arm64.tar.gz"
+    sha256 "fcc18d4f8ac1eb434020b37236b73a0ec2270ca60c7d101607fc6a86f07d4644"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.30.0/doppler_3.30.0_linux_amd64.tar.gz"
-    sha256 "c556004d4a1c24fc1df2bc82d041a780edcef31701fe9326959bd61668debf78"
+    url "https://github.com/DopplerHQ/cli/releases/download/3.30.1/doppler_3.30.1_linux_amd64.tar.gz"
+    sha256 "7aaff2fb0413b80624435f4eda3618428701479758a4b183ad0ae00606239c6b"
   end
   if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.30.0/doppler_3.30.0_linux_armv6.tar.gz"
-    sha256 "3905825aa5dcb1498a74880acb7fd66a25efd5e75e2f9e70b44bead0a16a8e1c"
+    url "https://github.com/DopplerHQ/cli/releases/download/3.30.1/doppler_3.30.1_linux_armv6.tar.gz"
+    sha256 "13bff958a765c0ecfe0b34a86502754a178e3be75e5f69502f5bb259bc5d7803"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/DopplerHQ/cli/releases/download/3.30.0/doppler_3.30.0_linux_arm64.tar.gz"
-    sha256 "41f438e484d46bc8ea7562586f67b42b845cf411496e38c5baf02bf4b933f778"
+    url "https://github.com/DopplerHQ/cli/releases/download/3.30.1/doppler_3.30.1_linux_arm64.tar.gz"
+    sha256 "a317f50fbeb351f76a965f8a337af3638b8643aa2f91ca2faed1a725972bd57d"
   end
 
   def install
