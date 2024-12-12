@@ -5,12 +5,12 @@
 class Doppler < Formula
   desc "The official Doppler CLI for managing your secrets"
   homepage "https://doppler.com"
-  version "3.70.0"
+  version "3.71.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/DopplerHQ/cli/releases/download/3.70.0/doppler_3.70.0_macOS_amd64.tar.gz"
-      sha256 "80380a306e6ad2f7e1ef48c094919c2240f411d3187254bd3f92e0205830be6a"
+      url "https://github.com/DopplerHQ/cli/releases/download/3.71.0/doppler_3.71.0_macOS_amd64.tar.gz"
+      sha256 "fec2c2df6f142a06fa4645e2715d8352095122cf4ecca93edc472fc0987183ee"
 
       def install
         bin.install "doppler"
@@ -20,8 +20,8 @@ class Doppler < Formula
       end
     end
     on_arm do
-      url "https://github.com/DopplerHQ/cli/releases/download/3.70.0/doppler_3.70.0_macOS_arm64.tar.gz"
-      sha256 "5338a2b94595dacc92d0e51928b27f0fb00b8efad44bdd5e3d514b883628651f"
+      url "https://github.com/DopplerHQ/cli/releases/download/3.71.0/doppler_3.71.0_macOS_arm64.tar.gz"
+      sha256 "d88f8df404ef5bee891c57008ecc3ebbd36b847ac14925e518ea96f451c2a33f"
 
       def install
         bin.install "doppler"
@@ -35,8 +35,8 @@ class Doppler < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/DopplerHQ/cli/releases/download/3.70.0/doppler_3.70.0_linux_amd64.tar.gz"
-        sha256 "b1eadf318bb2ff80f2b869a53d84bb3be00feb4400654a6291fd82312861f326"
+        url "https://github.com/DopplerHQ/cli/releases/download/3.71.0/doppler_3.71.0_linux_amd64.tar.gz"
+        sha256 "dfec8abc9de962ef707e57d46b1e03edbdbfb85b03bdbdd1e9297266ef0eb9cf"
 
         def install
           bin.install "doppler"
@@ -48,8 +48,8 @@ class Doppler < Formula
     end
     on_arm do
       if !Hardware::CPU.is_64_bit?
-        url "https://github.com/DopplerHQ/cli/releases/download/3.70.0/doppler_3.70.0_linux_armv6.tar.gz"
-        sha256 "3b602a0ebf5bee111776e7b0d129c8bf853b42f1f9f14e3cf332813e6315ddad"
+        url "https://github.com/DopplerHQ/cli/releases/download/3.71.0/doppler_3.71.0_linux_armv6.tar.gz"
+        sha256 "8b5f65fbf48607118007674d4499fb5fcb50557bdf83e3409988c51bd4cf5c34"
 
         def install
           bin.install "doppler"
@@ -61,8 +61,8 @@ class Doppler < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/DopplerHQ/cli/releases/download/3.70.0/doppler_3.70.0_linux_arm64.tar.gz"
-        sha256 "804d311aa2dc6d205ea07a99c1276b75a1549cd8971b06af43a61b182a07c30b"
+        url "https://github.com/DopplerHQ/cli/releases/download/3.71.0/doppler_3.71.0_linux_arm64.tar.gz"
+        sha256 "4ac8e449d94cfe53807565d17c26958e1f83e19edfc82ecc7c88f7975da85656"
 
         def install
           bin.install "doppler"
