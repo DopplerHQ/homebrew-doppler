@@ -5,12 +5,12 @@
 class Doppler < Formula
   desc "The official Doppler CLI for managing your secrets"
   homepage "https://doppler.com"
-  version "3.74.0"
+  version "3.75.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/DopplerHQ/cli/releases/download/3.74.0/doppler_3.74.0_macOS_amd64.tar.gz"
-      sha256 "e6e3aa2e042751e55b8fdb2f23cec8ba05a31c0f10cf32b64546f978d70a3043"
+      url "https://github.com/DopplerHQ/cli/releases/download/3.75.0/doppler_3.75.0_macOS_amd64.tar.gz"
+      sha256 "377f311b153f7c7b88afd02b07faab578076063191259eb3a4648ecf85cdab93"
 
       def install
         bin.install "doppler"
@@ -20,8 +20,8 @@ class Doppler < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/DopplerHQ/cli/releases/download/3.74.0/doppler_3.74.0_macOS_arm64.tar.gz"
-      sha256 "c9242c05f8ec03b97e1927e16c3010849e21ccdc019a1e51e891bc339a234951"
+      url "https://github.com/DopplerHQ/cli/releases/download/3.75.0/doppler_3.75.0_macOS_arm64.tar.gz"
+      sha256 "237f6d84223050ce16bb47a70faf9834587b505275a8294146fa051a19630d9f"
 
       def install
         bin.install "doppler"
@@ -33,43 +33,34 @@ class Doppler < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/DopplerHQ/cli/releases/download/3.74.0/doppler_3.74.0_linux_amd64.tar.gz"
-        sha256 "3851b68deb0687d97d59e8e4a3d7fcf233914a5da508ac34b8668f6c07005b18"
-
-        def install
-          bin.install "doppler"
-          bash_completion.install "completions/doppler.bash" => "doppler"
-          zsh_completion.install "completions/doppler.zsh" => "_doppler"
-          fish_completion.install "completions/doppler.fish"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/DopplerHQ/cli/releases/download/3.75.0/doppler_3.75.0_linux_amd64.tar.gz"
+      sha256 "e1bf2f665c478ff90e3d39bb32a568b7de10484ae2f460df0093ea40009d8df6"
+      def install
+        bin.install "doppler"
+        bash_completion.install "completions/doppler.bash" => "doppler"
+        zsh_completion.install "completions/doppler.zsh" => "_doppler"
+        fish_completion.install "completions/doppler.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if !Hardware::CPU.is_64_bit?
-        url "https://github.com/DopplerHQ/cli/releases/download/3.74.0/doppler_3.74.0_linux_armv6.tar.gz"
-        sha256 "807101bd49816a1f21c82e18a7423f0c89e83b238ecd6202d9aa94b11e976641"
-
-        def install
-          bin.install "doppler"
-          bash_completion.install "completions/doppler.bash" => "doppler"
-          zsh_completion.install "completions/doppler.zsh" => "_doppler"
-          fish_completion.install "completions/doppler.fish"
-        end
+    if Hardware::CPU.arm? and !Hardware::CPU.is_64_bit?
+      url "https://github.com/DopplerHQ/cli/releases/download/3.75.0/doppler_3.75.0_linux_armv6.tar.gz"
+      sha256 "35a1b3e3a07063decd61864a6dbe521c3db99b108ce3dfcd7cd3960997f88aa1"
+      def install
+        bin.install "doppler"
+        bash_completion.install "completions/doppler.bash" => "doppler"
+        zsh_completion.install "completions/doppler.zsh" => "_doppler"
+        fish_completion.install "completions/doppler.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/DopplerHQ/cli/releases/download/3.74.0/doppler_3.74.0_linux_arm64.tar.gz"
-        sha256 "e9049bd293af40b516180eded7a8062c9721a1cce6604be769848e86e24974de"
-
-        def install
-          bin.install "doppler"
-          bash_completion.install "completions/doppler.bash" => "doppler"
-          zsh_completion.install "completions/doppler.zsh" => "_doppler"
-          fish_completion.install "completions/doppler.fish"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/DopplerHQ/cli/releases/download/3.75.0/doppler_3.75.0_linux_arm64.tar.gz"
+      sha256 "679f2cfcfbb1ae7adc74f6a1c6ba0bc67f5efb8f411547b97a51d4cd360d7732"
+      def install
+        bin.install "doppler"
+        bash_completion.install "completions/doppler.bash" => "doppler"
+        zsh_completion.install "completions/doppler.zsh" => "_doppler"
+        fish_completion.install "completions/doppler.fish"
       end
     end
   end
