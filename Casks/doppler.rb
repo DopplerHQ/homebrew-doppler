@@ -3,34 +3,29 @@ cask "doppler" do
   version "3.76.5"
 
   on_macos do
-    on_intel do
-      sha256 "0a3c51cefbeb0d15a4ee34925366f9019efe9cb0a330892df8bd103348a4fc81"
-      url "https://github.com/DopplerHQ/cli/releases/download/#{version}/doppler_#{version}_macOS_amd64.tar.gz",
-        verified: "github.com/DopplerHQ/cli"
-    end
     on_arm do
       sha256 "91c4bab5bbd3b630dea8c96e9c0a39cf9e59bf7772f34ab979bea66ccee9560a"
-      url "https://github.com/DopplerHQ/cli/releases/download/#{version}/doppler_#{version}_macOS_arm64.tar.gz",
-        verified: "github.com/DopplerHQ/cli"
+      url "https://github.com/DopplerHQ/cli/releases/download/#{version}/doppler_#{version}_macOS_arm64.tar.gz"
+    end
+    on_intel do
+      sha256 "0a3c51cefbeb0d15a4ee34925366f9019efe9cb0a330892df8bd103348a4fc81"
+      url "https://github.com/DopplerHQ/cli/releases/download/#{version}/doppler_#{version}_macOS_amd64.tar.gz"
     end
   end
-
   on_linux do
-    on_intel do
-      sha256 "1b2f412d984920d665daf233ab6c15b364df9339b5c5b5224d5e8ee4e0a70154"
-      url "https://github.com/DopplerHQ/cli/releases/download/#{version}/doppler_#{version}_linux_amd64.tar.gz",
-        verified: "github.com/DopplerHQ/cli"
-    end
     on_arm do
       sha256 "567f051c4c334b79a37ee44c9373671c451dd8a4945ed49288a8f3fd0b73ec89"
-      url "https://github.com/DopplerHQ/cli/releases/download/#{version}/doppler_#{version}_linux_arm64.tar.gz",
-        verified: "github.com/DopplerHQ/cli"
+      url "https://github.com/DopplerHQ/cli/releases/download/#{version}/doppler_#{version}_linux_arm64.tar.gz"
+    end
+    on_intel do
+      sha256 "1b2f412d984920d665daf233ab6c15b364df9339b5c5b5224d5e8ee4e0a70154"
+      url "https://github.com/DopplerHQ/cli/releases/download/#{version}/doppler_#{version}_linux_amd64.tar.gz"
     end
   end
 
   name "doppler"
-  desc "The official Doppler CLI for managing your secrets"
-  homepage "https://doppler.com"
+  desc "Official CLI for managing secrets"
+  homepage "https://doppler.com/"
 
   livecheck do
     skip "Auto-generated on release."
@@ -41,12 +36,11 @@ cask "doppler" do
   fish_completion "completions/doppler.fish"
   zsh_completion "completions/doppler.zsh"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/doppler"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/doppler"]
     end
   end
 
   # No zap stanza required
-
 end
