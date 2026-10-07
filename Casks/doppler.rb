@@ -36,9 +36,9 @@ cask "doppler" do
   fish_completion "completions/doppler.fish"
   zsh_completion "completions/doppler.zsh"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/doppler"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/doppler"]
     end
   end
 
